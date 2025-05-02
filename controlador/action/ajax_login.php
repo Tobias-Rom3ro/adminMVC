@@ -15,7 +15,7 @@
                 $_SESSION['ID_USUARIO'] = $usuario->getId();
                 $_SESSION['NOMBRE_USUARIO'] = $usuario->getNombre();
 
-                $ruta = "./index.php";
+                $ruta = "./productos/productos_list.php";
 
             $msg = "Puede iniciar sesión satisfatoriamente";
         }else{ // No puede iniciar sesión
