@@ -2,7 +2,6 @@
 session_start();
 require_once (__DIR__."/../mdb/mdbProducto.php");
 
-// Obtener el ID del producto a eliminar
 $id = filter_input(INPUT_POST, 'id');
 $respuesta = [];
 
@@ -27,6 +26,5 @@ if($id) {
     ];
 }
 
-// Enviar respuesta en formato JSON
 echo json_encode($respuesta);
 ?>

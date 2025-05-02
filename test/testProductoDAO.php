@@ -102,7 +102,7 @@ function testBorrarProducto($id) {
 }
 
 testLeerProductos();
-testInsertarProducto(99, "Salchipapa", "salchipapa mediana", 30000);
+testInsertarProducto(null, "Salchipapa", "salchipapa mediana", 30000);
 //testBuscarProductoPorId(99);
 //testModificarProducto(99, "Pizza", "pizza hawaiana", 10000);
 //testBorrarProducto(99);

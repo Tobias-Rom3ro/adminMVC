@@ -183,7 +183,6 @@ function deleteProduct() {
 }
 
 function showAlert(message, type) {
-    // Create alert element
     const alertHtml = `
         <div class="alert alert-${type} alert-dismissible fade show" role="alert">
             ${message}

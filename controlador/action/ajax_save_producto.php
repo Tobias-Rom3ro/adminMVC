@@ -11,7 +11,6 @@ $precio = filter_input(INPUT_POST, 'precio');
 
 $respuesta = [];
 
-// Validar que se hayan recibido los datos necesarios
 if(!$nombre || !$descripcion || !$precio) {
     $respuesta = [
         'type' => 'error',
@@ -23,9 +22,7 @@ if(!$nombre || !$descripcion || !$precio) {
 
 require_once (__DIR__."/../../modelo/entidad/Producto.php");
 
-// Determinar si es una actualización o inserción
 if($action == 'update') {
-    // Actualización
     $producto = new Producto($id, $nombre, $descripcion, $precio);
     $resultado = modificarProducto($producto);
 
@@ -41,8 +38,6 @@ if($action == 'update') {
         ];
     }
 } else if($action == 'add') {
-    // Inserción
-    // Para inserción con autoincremento en la BD, usar NULL o 0 como ID
     $producto = new Producto(null, $nombre, $descripcion, $precio);
     $resultado = insertarProducto($producto);
 
@@ -64,6 +59,5 @@ if($action == 'update') {
     ];
 }
 
-// Enviar respuesta en formato JSON
 echo json_encode($respuesta);
 ?>
