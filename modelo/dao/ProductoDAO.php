@@ -43,9 +43,10 @@ class ProductoDAO {
 
     public function insertarProducto(Producto $producto){
         $data_source = new DataSource();
-        $sql = "INSERT INTO producto VALUES (:id, :nombre, :descripcion, :precio)";
+
+        // Modificamos la consulta para usar el autoincremento de la base de datos
+        $sql = "INSERT INTO producto (nombre, descripcion, precio) VALUES (:nombre, :descripcion, :precio)";
         $resultado = $data_source->ejecutarActualizacion($sql, array(
-                ':id'=>$producto->getId(),
                 ':nombre'=>$producto->getNombre(),
                 ':descripcion'=>$producto->getDescripcion(),
                 ':precio'=>$producto->getPrecio()

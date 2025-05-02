@@ -42,13 +42,8 @@ if($action == 'update') {
     }
 } else if($action == 'add') {
     // Inserción
-    // Para inserción, si no se proporciona un ID, generamos uno
-    if(empty($id)) {
-        // Generamos un ID único con timestamp actual
-        $id = time();
-    }
-
-    $producto = new Producto($id, $nombre, $descripcion, $precio);
+    // Para inserción con autoincremento en la BD, usar NULL o 0 como ID
+    $producto = new Producto(null, $nombre, $descripcion, $precio);
     $resultado = insertarProducto($producto);
 
     if($resultado > 0) {
